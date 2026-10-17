@@ -1,0 +1,13 @@
+{
+  "name": "kubelatch-action",
+  "private": true,
+  "description": "GitHub Action that exchanges the job's OIDC token for a short-lived kubelatch credential",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "test": "node --test"
+  }
+}

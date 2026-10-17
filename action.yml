@@ -1,0 +1,25 @@
+name: kubelatch credentials
+description: Exchange the job's GitHub OIDC token for a short-lived kubelatch credential and a kubeconfig, with no secret stored in GitHub.
+author: Picaporte Labs
+branding:
+  icon: key
+  color: blue
+
+inputs:
+  url:
+    description: >-
+      The URL of your kubelatch: its KUBELATCH_BASE_URL, which is the audience
+      of the OIDC token. A trailing slash is ignored.
+    required: true
+
+outputs:
+  kubeconfig:
+    description: Path of the kubeconfig written for this job. KUBECONFIG already points at it.
+  expires-at:
+    description: When the credential expires, in RFC 3339.
+  clusters:
+    description: The ids of the clusters the credential reaches, as a JSON array.
+
+runs:
+  using: node24
+  main: src/main.js
