@@ -45,11 +45,11 @@ Before the first run, an administrator of your kubelatch creates a bot with a pe
 
 The credential lasts one hour unless your administrator changed it (`KUBELATCH_CI_TOKEN_TTL`); a job that runs longer uses the action again.
 
-The action has no dependencies: one file of JavaScript on Node 24, [`src/action.js`](src/action.js), short enough to read before you trust it. Pin it by commit SHA if your policy asks for that.
+The action has no dependencies: two short files of JavaScript on Node 24, [`src/main.js`](src/main.js) and [`src/action.js`](src/action.js), short enough to read before you trust it. Pin it by commit SHA if your policy asks for that.
 
 ## Network
 
-The runner must reach kubelatch over https. The action trusts what a `curl` on the runner trusts: the system's certificate store, where a self-hosted runner keeps its organisation's CA, plus Node's own and `NODE_EXTRA_CA_CERTS`. It goes through `HTTPS_PROXY` or `HTTP_PROXY` unless `NO_PROXY` leaves kubelatch out.
+The runner must reach kubelatch over https. The action trusts what a `curl` on the runner trusts: the system's certificate store, where a self-hosted runner keeps its organisation's CA, plus Node's own and `NODE_EXTRA_CA_CERTS`. It goes through `HTTPS_PROXY` (kubelatch and GitHub are both https) unless `NO_PROXY` leaves kubelatch out.
 
 ## When it fails
 
