@@ -2,7 +2,7 @@ name: kubelatch credentials
 description: Exchange the job's GitHub OIDC token for a short-lived kubelatch credential and a kubeconfig, with no secret stored in GitHub.
 author: Picaporte Labs
 branding:
-  icon: key
+  icon: lock
   color: blue
 
 inputs:
